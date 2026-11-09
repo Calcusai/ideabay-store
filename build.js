@@ -57,8 +57,16 @@ const availabilityUrl = (it) => wa(`Hi IdeaBay! I'd like to check rental availab
 const priceHtml = (it) => (it.price ? `Rs. ${Number(it.price).toLocaleString("en-US")} <small>/ day</small>` : "DM for rate");
 const altTel = (s) => s.replace(/ /g, "");
 
+const optimizedManifestPath = path.join(STATIC, "images/optimized/manifest.json");
+const optimizedImages = fs.existsSync(optimizedManifestPath) ? JSON.parse(fs.readFileSync(optimizedManifestPath, "utf8")) : {};
+function responsiveImage(it, sizes) {
+  const variants = optimizedImages[it.slug]?.variants;
+  return variants ? `srcset="${variants.map(v => `${v.src} ${v.width}w`).join(", ")}" sizes="${sizes}"` : "";
+}
+
 /** Use a real photo if static/images/<slug>.(webp|jpg|jpeg|png) exists. */
 function itemImage(it) {
+  if (optimizedImages[it.slug]) return optimizedImages[it.slug].variants.at(-1).src;
   for (const ext of ["webp", "jpg", "jpeg", "png"]) {
     if (fs.existsSync(path.join(STATIC, "images", `${it.slug}.${ext}`))) return `/static/images/${it.slug}.${ext}`;
   }
@@ -83,7 +91,7 @@ const dailyRate = (it) => `LKR ${it.price.toLocaleString("en-US")} / day`;
 function media(it, eager = false) {
   const img = itemImage(it);
   const art = img
-    ? `<img class="photo" src="${img}" alt="${e(it.name)} available for rent in Colombo" decoding="async" loading="${eager ? "eager" : "lazy"}" ${eager ? 'fetchpriority="high"' : ""} width="600" height="600">`
+    ? `<img class="photo" src="${img}" ${responsiveImage(it, eager ? "(max-width: 650px) 90vw, 560px" : "(max-width: 650px) 44vw, (max-width: 1000px) 30vw, 280px")} alt="${e(it.name)} available for rent in Colombo" decoding="async" loading="${eager ? "eager" : "lazy"}" ${eager ? 'fetchpriority="high"' : ""} width="600" height="600">`
     : `<span class="art" role="img" aria-label="${e(it.name)}">${ICONS[CAT[it.cat].icon]}</span>`;
   return `<div class="card-media">${WAVE}<span class="brand-tag">${e(it.brand)}</span><span class="logo-mini">${LOGO}</span>${art}</div>`;
 }
@@ -213,6 +221,8 @@ function footer() {
 
 function page(p, title, desc, body, { schemas = [], ogType = "website", priority = "0.7", ogImage = null, imageAlt = title, mainEntity = null, noindex = false } = {}) {
   const canonical = absUrl(p);
+  const primaryItem = p === "/" ? ITEM["sony-fx3"] : ITEMS.find(it => itemUrl(it) === p);
+  const preload = primaryItem && optimizedImages[primaryItem.slug] ? `<link rel="preload" as="image" href="${itemImage(primaryItem)}" imagesrcset="${optimizedImages[primaryItem.slug].variants.map(v => `${v.src} ${v.width}w`).join(", ")}" imagesizes="(max-width: 650px) 90vw, 560px" fetchpriority="high">` : "";
   if (desc.length > 160) desc = desc.slice(0, 157).replace(/\s+\S*$/, "") + "…";
   const preview = previewMeta(ogImage || "/static/og.png");
   const ogImg = preview.url;
@@ -227,7 +237,7 @@ function page(p, title, desc, body, { schemas = [], ogType = "website", priority
 <html lang="en-LK">
 <head>
 <meta charset="utf-8">
-<script>document.documentElement.className="js"</script>
+<script>document.documentElement.className="js";window.__loadingTimer=setTimeout(function(){document.documentElement.classList.add("is-loading")},180);window.__loadingFallback=setTimeout(function(){clearTimeout(window.__loadingTimer);document.documentElement.classList.remove("is-loading")},2200)</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${e(title)}</title>
 <meta name="description" content="${e(desc)}">
@@ -260,9 +270,11 @@ function page(p, title, desc, body, { schemas = [], ogType = "website", priority
 <link rel="apple-touch-icon" href="/static/logo.png">
 <link rel="manifest" href="/site.webmanifest">
 <link rel="stylesheet" href="/static/style.css">
+${preload}
 ${ld}
 </head>
 <body>
+<div class="site-loader" role="status" aria-label="Loading IdeaBay equipment"><div class="loader-brand"><img src="/static/logo.png" alt="" width="90" height="90"><span>IDEABAY<span class="loader-caption">RENTING STORE</span></span></div><span class="loader-aperture" aria-hidden="true"></span><p>Getting your gear ready</p></div>
 ${header(p)}
 <main id="main">
 ${body}
@@ -304,7 +316,7 @@ function buildHome() {
   const heroItems = ["sony-fx3", "sony-a7-iv", "sigma-70-200mm-f2-8-dg-dn-os-sports", "dji-mic-2", "rodecaster-pro-ii", "godox-v100-sony"].map(slug => ITEM[slug]);
   const slides = heroItems.map((it, n) => `<article class="rental-slide" data-slide ${n ? 'hidden' : ''} role="group" aria-roledescription="slide" aria-label="${n + 1} of ${heroItems.length}: ${e(it.name)}">
     <div class="slide-copy"><span class="slide-category">${e(CAT[it.cat].name)} / FOR RENT</span><h2>${e(it.name)}</h2><p>${e(it.short)}</p><div class="slide-actions"><a class="btn btn-amber" href="${e(availabilityUrl(it))}" target="_blank" rel="noopener">View Availability ${ICONS.wa}</a><a class="slide-details" href="${itemUrl(it)}">View gear details ↗</a></div><span class="slide-location">Nawinna, Maharagama · Daily &amp; weekend rentals</span></div>
-    <div class="slide-image"><span class="slide-watermark" aria-hidden="true">${e(it.brand)}</span><img src="${itemImage(it)}" alt="${e(it.name)} for rent at IdeaBay" width="800" height="600" loading="${n ? 'lazy' : 'eager'}" ${n ? '' : 'fetchpriority="high"'}><span class="slide-image-note">IDEABAY RENTING STORE / ${String(n + 1).padStart(2, '0')}</span></div></article>`).join("");
+    <div class="slide-image"><span class="slide-watermark" aria-hidden="true">${e(it.brand)}</span><img src="${itemImage(it)}" ${responsiveImage(it, "(max-width: 650px) 90vw, 560px")} decoding="async" alt="${e(it.name)} for rent at IdeaBay" width="800" height="600" loading="${n ? 'lazy' : 'eager'}" ${n ? '' : 'fetchpriority="high"'}><span class="slide-image-note">IDEABAY RENTING STORE / ${String(n + 1).padStart(2, '0')}</span></div></article>`).join("");
   const categoryPhotos = {
     cameras: "sony-a7-iv",
     lenses: "sigma-50mm-f1-4-dg-dn-art",
@@ -313,7 +325,7 @@ function buildHome() {
     other: "dji-rs-4-pro",
   };
   const cats = CATEGORIES.map((c) =>
-    `<a class="category-photo" href="/gear/${c.slug}/" aria-label="Browse ${e(c.name)}" title="${e(c.name)}"><img src="${itemImage(ITEM[categoryPhotos[c.slug]])}" alt="${e(c.name)}" width="300" height="300" loading="lazy" decoding="async"></a>`).join("");
+    `<a class="category-photo" href="/gear/${c.slug}/" aria-label="Browse ${e(c.name)}" title="${e(c.name)}"><img src="${itemImage(ITEM[categoryPhotos[c.slug]])}" ${responsiveImage(ITEM[categoryPhotos[c.slug]], "(max-width: 650px) 44vw, 220px")} alt="${e(c.name)}" width="300" height="300" loading="lazy" decoding="async"></a>`).join("");
   const featured = ITEMS.map((i) => card(i)).join("");
   const brands = BRANDS.map(b => { const k = ({"Sony":"sony","Sigma":"sigma","DJI":"dji","RØDE":"rode","Godox":"godox","Nanlite":"nanlite","Hollyland":"hollyland"})[b]; return k ? `<li><img src="/static/images/brand-${k}.webp" alt="${e(b)}" width="120" height="48" loading="lazy"></li>` : `<li>${e(b)}</li>`; }).join("");
   const faqs = FAQS.slice(0, 4).map(([q, a]) => `<details><summary>${e(q)}</summary><p>${e(a)}</p></details>`).join("");

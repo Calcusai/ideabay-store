@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "build": "node build.js",
+    "optimize:images": "node scripts/optimize-images.js",
     "dev": "node scripts/dev.js",
     "check": "node scripts/check.js"
   },

@@ -1,5 +1,6 @@
 // Sanity check after build: broken internal links, invalid JSON-LD, duplicate titles.
 import fs from "node:fs";
+import { createHash } from "node:crypto";
 import path from "node:path";
 import { SITE, ITEMS, CATEGORIES, KITS } from "../data.js";
 const root = "site";
@@ -64,3 +65,13 @@ for (const it of ITEMS) {
 }
 for (const kit of KITS) for (const slug of kit.items) if (!ITEMS.some(it => it.slug === slug)) throw new Error(`Unknown kit item: ${slug}`);
 console.log(`Search and sharing: ${previewUrls.size} unique item previews, PNG dimensions, rental prices/schema and image sitemap entries verified`);
+
+const optimized = JSON.parse(fs.readFileSync("static/images/optimized/manifest.json", "utf8"));
+for (const it of ITEMS) {
+  const entry = optimized[it.slug];
+  if (!entry || entry.sourceHash !== createHash("sha256").update(fs.readFileSync(entry.source)).digest("hex")) throw new Error(`Run npm run optimize:images for ${it.slug}`);
+  for (const variant of entry.variants) if (!fs.existsSync(path.join(root, variant.src))) throw new Error(`Missing responsive image: ${variant.src}`);
+  const html = fs.readFileSync(path.join(root, `/gear/${it.cat}/${it.slug}/index.html`), "utf8");
+  if (!html.includes('imagesrcset=') || !html.includes('srcset=') || !html.includes('class="site-loader"')) throw new Error(`Missing image/loading optimization: ${it.slug}`);
+}
+console.log("Image performance: 19 current source hashes, 57 responsive assets, responsive preloads and branded loaders verified");

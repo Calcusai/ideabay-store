@@ -33,3 +33,5 @@ __pycache__/
 *.py[cod]
 .claude/
 .codex/
+
+# Keep source photos, optimized variants and social previews tracked in Git.

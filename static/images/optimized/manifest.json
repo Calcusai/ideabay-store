@@ -1,0 +1,344 @@
+{
+  "sony-a7-iv": {
+    "source": "static/images/sony-a7-iv.webp",
+    "sourceHash": "5c3b594fb676faf73a8de4d92dc2565621197026d181a9804d27164a96e23877",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/sony-a7-iv-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/sony-a7-iv-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/sony-a7-iv-960.webp"
+      }
+    ]
+  },
+  "sony-fx3": {
+    "source": "static/images/sony-fx3.webp",
+    "sourceHash": "be296a7b879b49f1742791b4028ced2ce09d2175de8bd55b23c5ac5bdabf7abf",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/sony-fx3-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/sony-fx3-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/sony-fx3-960.webp"
+      }
+    ]
+  },
+  "sigma-24-70mm-f2-8-dg-dn-ii-art": {
+    "source": "static/images/sigma-24-70mm-f2-8-dg-dn-ii-art.webp",
+    "sourceHash": "fad15a4d7e2d5ae0ec259e5abffb6dfab9ce097d1dab9099f749be2b0b0cb531",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/sigma-24-70mm-f2-8-dg-dn-ii-art-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/sigma-24-70mm-f2-8-dg-dn-ii-art-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/sigma-24-70mm-f2-8-dg-dn-ii-art-960.webp"
+      }
+    ]
+  },
+  "sigma-70-200mm-f2-8-dg-dn-os-sports": {
+    "source": "static/images/sigma-70-200mm-f2-8-dg-dn-os-sports.webp",
+    "sourceHash": "6520f8b7b1494e535fb0d8e94ee1949f8206228b056be803dc58f3aa842d1c69",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/sigma-70-200mm-f2-8-dg-dn-os-sports-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/sigma-70-200mm-f2-8-dg-dn-os-sports-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/sigma-70-200mm-f2-8-dg-dn-os-sports-960.webp"
+      }
+    ]
+  },
+  "sigma-50mm-f1-4-dg-dn-art": {
+    "source": "static/images/sigma-50mm-f1-4-dg-dn-art.webp",
+    "sourceHash": "ccea9f5cd1ad6252da38c3cf7c5899bbeac1956e8a9af1e673b8e9c3259c0a2b",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/sigma-50mm-f1-4-dg-dn-art-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/sigma-50mm-f1-4-dg-dn-art-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/sigma-50mm-f1-4-dg-dn-art-960.webp"
+      }
+    ]
+  },
+  "sigma-85mm-f1-4-dg-dn-art": {
+    "source": "static/images/sigma-85mm-f1-4-dg-dn-art.webp",
+    "sourceHash": "282cd53bb18ea924bdcbe07d11b29a8f9c0d3cfc292fed33118ed708ade70be5",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/sigma-85mm-f1-4-dg-dn-art-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/sigma-85mm-f1-4-dg-dn-art-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/sigma-85mm-f1-4-dg-dn-art-960.webp"
+      }
+    ]
+  },
+  "sony-fe-16-35mm-f2-8-gm-ii": {
+    "source": "static/images/sony-fe-16-35mm-f2-8-gm-ii.webp",
+    "sourceHash": "343f690ac0913e748dce79d9f7a50801877cbeff2259062f73178379493d5d63",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/sony-fe-16-35mm-f2-8-gm-ii-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/sony-fe-16-35mm-f2-8-gm-ii-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/sony-fe-16-35mm-f2-8-gm-ii-960.webp"
+      }
+    ]
+  },
+  "sony-fe-200-600mm-f5-6-6-3-g-oss": {
+    "source": "static/images/sony-fe-200-600mm-f5-6-6-3-g-oss.webp",
+    "sourceHash": "c36c94da0b29af5f2c7108d3807acfc2e9609cbd35152ed1aba2acd0cd6e7e0c",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/sony-fe-200-600mm-f5-6-6-3-g-oss-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/sony-fe-200-600mm-f5-6-6-3-g-oss-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/sony-fe-200-600mm-f5-6-6-3-g-oss-960.webp"
+      }
+    ]
+  },
+  "dji-mic-2": {
+    "source": "static/images/dji-mic-2.png",
+    "sourceHash": "e138c8a5f78be8503422c5e2978b6bc3945de127adc170e660050c95fac4cf0a",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/dji-mic-2-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/dji-mic-2-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/dji-mic-2-960.webp"
+      }
+    ]
+  },
+  "dji-mic-3": {
+    "source": "static/images/dji-mic-3.webp",
+    "sourceHash": "cfa51032f1dfbe6505c777a3394367100c3b37b966ed59bcd43484a182fabacd",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/dji-mic-3-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/dji-mic-3-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/dji-mic-3-960.webp"
+      }
+    ]
+  },
+  "rodecaster-pro-ii": {
+    "source": "static/images/rodecaster-pro-ii.webp",
+    "sourceHash": "77fe930f608de89b6f3139c00cae8ae9940dc830afd210d02a4ed5fa0e22ceee",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/rodecaster-pro-ii-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/rodecaster-pro-ii-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/rodecaster-pro-ii-960.webp"
+      }
+    ]
+  },
+  "rode-podmic-with-arm": {
+    "source": "static/images/rode-podmic-with-arm.webp",
+    "sourceHash": "81a6bde08bd6bd524526968971c74d5c3769c7c547b47bcef0879eb668a285da",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/rode-podmic-with-arm-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/rode-podmic-with-arm-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/rode-podmic-with-arm-960.webp"
+      }
+    ]
+  },
+  "nicefoto-lv6000a": {
+    "source": "static/images/nicefoto-lv6000a.webp",
+    "sourceHash": "6c6cffaf43d7829650a24a679e7ab6550de73dadae96ba5c16e6b0a39138736f",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/nicefoto-lv6000a-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/nicefoto-lv6000a-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/nicefoto-lv6000a-960.webp"
+      }
+    ]
+  },
+  "nanlite-fs-300b": {
+    "source": "static/images/nanlite-fs-300b.webp",
+    "sourceHash": "358fc4f1deaafc78722c1a68d86bc33d434f8b746ffce8a041b9a425ba304803",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/nanlite-fs-300b-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/nanlite-fs-300b-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/nanlite-fs-300b-960.webp"
+      }
+    ]
+  },
+  "nanlite-fs-200b": {
+    "source": "static/images/nanlite-fs-200b.webp",
+    "sourceHash": "74975ae7f0f664c3769a616799b632041fc7190a2eedda620de110bc5e757a97",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/nanlite-fs-200b-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/nanlite-fs-200b-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/nanlite-fs-200b-960.webp"
+      }
+    ]
+  },
+  "nanlite-pavotube-ii-30c-2-light-kit": {
+    "source": "static/images/nanlite-pavotube-ii-30c-2-light-kit.webp",
+    "sourceHash": "7d47abedcfa527a0a3eeaa59b1813fb9395e91744ffeddd7d0e722efe6e00b7c",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/nanlite-pavotube-ii-30c-2-light-kit-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/nanlite-pavotube-ii-30c-2-light-kit-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/nanlite-pavotube-ii-30c-2-light-kit-960.webp"
+      }
+    ]
+  },
+  "godox-v100-sony": {
+    "source": "static/images/godox-v100-sony.webp",
+    "sourceHash": "2700d7c07b0b58b479f9958188d3ce5a8ee322a3d55c3d23f7e1fce488189deb",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/godox-v100-sony-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/godox-v100-sony-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/godox-v100-sony-960.webp"
+      }
+    ]
+  },
+  "hollyland-solidcom-se-global-5s": {
+    "source": "static/images/hollyland-solidcom-se-global-5s.webp",
+    "sourceHash": "589216649d5eb90918ca70f53fc74289ef56403d18784eafee6bed1e02168705",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/hollyland-solidcom-se-global-5s-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/hollyland-solidcom-se-global-5s-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/hollyland-solidcom-se-global-5s-960.webp"
+      }
+    ]
+  },
+  "dji-rs-4-pro": {
+    "source": "static/images/dji-rs-4-pro.png",
+    "sourceHash": "c24e78791a2ca317fa3ece956cea850b0c7814023699814e9ff8dee2d55a929a",
+    "variants": [
+      {
+        "width": 320,
+        "src": "/static/images/optimized/dji-rs-4-pro-320.webp"
+      },
+      {
+        "width": 640,
+        "src": "/static/images/optimized/dji-rs-4-pro-640.webp"
+      },
+      {
+        "width": 960,
+        "src": "/static/images/optimized/dji-rs-4-pro-960.webp"
+      }
+    ]
+  }
+}

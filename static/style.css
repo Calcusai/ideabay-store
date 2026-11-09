@@ -288,3 +288,15 @@ h1,h2,h3{letter-spacing:-.035em;text-transform:none}.eyebrow{font-size:.65rem;le
 .category-photo:hover img{transform:scale(1.04)}
 @media(max-width:650px){.category-scroll{gap:24px}.category-photo{flex-basis:44%;min-width:150px}.category-photo img{max-height:190px}}
 @media(prefers-reduced-motion:reduce){.category-photo img{transition:none}.category-photo:hover img{transform:none}}
+
+/* A brief branded loading state; content remains usable without JavaScript. */
+.site-loader{display:none;position:fixed;inset:0;z-index:9999;background:#f7f6ef;color:var(--forest);align-items:center;justify-content:center;flex-direction:column;gap:30px;pointer-events:none}
+.is-loading .site-loader{display:flex;animation:loader-appear .18s ease-out}
+.loader-brand{display:flex;align-items:center;gap:18px;font:700 clamp(1.8rem,5vw,2.7rem)/1.1 var(--body);letter-spacing:-.05em}
+.loader-brand img{object-fit:contain}
+.loader-caption{display:block;margin-top:9px;font:600 .65rem/1 var(--body);letter-spacing:.35em}
+.loader-aperture{width:42px;height:42px;border:2px solid #dce1d6;border-top-color:var(--amber-d);border-right-color:var(--forest);border-radius:50%;animation:loader-spin .9s linear infinite}
+.site-loader p{margin:0;font-size:.75rem;letter-spacing:.08em;color:#586654}
+@keyframes loader-spin{to{transform:rotate(360deg)}}
+@keyframes loader-appear{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.is-loading .site-loader,.loader-aperture{animation:none}}

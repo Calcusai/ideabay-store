@@ -62,3 +62,10 @@ Additional missing equipment photos are stored locally as optimized WebP files. 
 
 
 Product search metadata and individual share previews are documented in `SEO-LAUNCH.md`. Each product has a dedicated PNG preview under `static/share/`; update it alongside its catalog photo. `npm run check` validates previews, prices and rental structured data. External search and social previews require deployment to the public domain; localhost is for development.
+
+
+## Faster product images and loading state
+
+Source photos, responsive WebP images and social PNG previews are all tracked in Git. After updating a product photo, run `npm run optimize:images` locally (requires `cwebp`, available with `brew install webp` on macOS), then commit `static/images/optimized/` along with the source photo. Deployments use these committed variants and need no image converter. Each item has 320px, 640px and 960px versions, served through responsive `srcset` attributes. The first visible hero/product photo is preloaded; catalog photos remain lazy loaded. Social preview PNGs remain separate.
+
+A cream, forest-green and amber loading screen appears after 180ms on slower loads. It dismisses when the main photo loads or fails, with a short timeout and an independent 2.2-second fallback. It never waits for lazy images, supports reduced motion and is hidden when JavaScript is unavailable.

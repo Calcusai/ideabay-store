@@ -1,3 +1,21 @@
+// Show the branded loader only on slower loads, and never wait for lazy images.
+(() => {
+  const finish = () => {
+    clearTimeout(window.__loadingTimer);
+    clearTimeout(window.__loadingFallback);
+    document.documentElement.classList.remove('is-loading');
+    document.querySelector('.site-loader')?.setAttribute('aria-hidden', 'true');
+  };
+  const primary = document.querySelector('img[fetchpriority="high"]');
+  if (!primary || primary.complete) finish();
+  else {
+    primary.addEventListener('load', finish, { once: true });
+    primary.addEventListener('error', finish, { once: true });
+    setTimeout(finish, 1500);
+  }
+  window.addEventListener('pageshow', finish, { once: true });
+})();
+
 // Mobile menu
 const burger = document.querySelector('.burger');
 const menu = document.getElementById('menu');
