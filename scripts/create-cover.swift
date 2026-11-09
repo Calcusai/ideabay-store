@@ -34,5 +34,5 @@ NSRect(x: 65, y: 36, width: 1070, height: 4).fill()
 context.flushGraphics()
 NSGraphicsContext.restoreGraphicsState()
 let data = bitmap.representation(using: .png, properties: [:])!
-try data.write(to: URL(fileURLWithPath: "static/og-cover.png"))
+try data.write(to: URL(fileURLWithPath: "static/og-cover-white-original.png"))
 print("Created white 1200 × 630 cover using original logo.png directly.")
