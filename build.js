@@ -78,7 +78,7 @@ function shareImage(it) {
   return `/static/share/${it.slug}.png`;
 }
 function previewMeta(imagePath) {
-  const file = path.join(ROOT, imagePath.replace(/^\//, ""));
+  const file = imagePath === "/static/logo.png" ? path.join(ROOT, "logo.png") : path.join(ROOT, imagePath.replace(/^\//, ""));
   const bytes = fs.readFileSync(file);
   return {
     url: absUrl(imagePath) + `?v=${createHash("sha256").update(bytes).digest("hex").slice(0, 12)}`,
@@ -224,7 +224,7 @@ function page(p, title, desc, body, { schemas = [], ogType = "website", priority
   const primaryItem = p === "/" ? ITEM["sony-fx3"] : ITEMS.find(it => itemUrl(it) === p);
   const preload = primaryItem && optimizedImages[primaryItem.slug] ? `<link rel="preload" as="image" href="${itemImage(primaryItem)}" imagesrcset="${optimizedImages[primaryItem.slug].variants.map(v => `${v.src} ${v.width}w`).join(", ")}" imagesizes="(max-width: 650px) 90vw, 560px" fetchpriority="high">` : "";
   if (desc.length > 160) desc = desc.slice(0, 157).replace(/\s+\S*$/, "") + "…";
-  const preview = previewMeta(ogImage || "/static/og.png");
+  const preview = previewMeta(ogImage || "/static/logo.png");
   const ogImg = preview.url;
   if (!noindex) {
     if (!schemas.some(s => s["@id"] === absUrl("/#store"))) schemas.push(storeSchema());
