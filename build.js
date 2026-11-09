@@ -312,6 +312,18 @@ function kitsHtml(kits) {
 }
 
 // ------------------------------------------------------------------ pages
+function locationSection() {
+  return `<section class="section store-location" id="location" aria-labelledby="location-title"><div class="container location-layout">
+    <div class="location-copy"><span class="eyebrow">Find us</span><h2 id="location-title">Your gear.<br>Your local pickup.</h2>
+      <p>Visit IdeaBay Studio in Nawinna, Maharagama to collect your camera, lens and production equipment.</p>
+      <address><strong>IdeaBay Renting Store</strong><br>${e(SITE.street)}<br>${e(SITE.city)} ${e(SITE.postal)}, Sri Lanka</address>
+      <p class="location-hours">${ICONS.clock}<span>${e(SITE.hours_display)}<br>Message us before visiting.</span></p>
+      <div class="location-actions"><a class="btn btn-dark" href="${e(directionsUrl())}" target="_blank" rel="noopener">${ICONS.pin} Get directions ↗</a><a class="location-call" href="tel:${SITE.phone}">${e(SITE.phone_display)}</a></div>
+    </div>
+    <div class="location-map"><iframe title="IdeaBay Studio pickup location in Nawinna, Maharagama" src="https://www.google.com/maps?q=${SITE.latitude},${SITE.longitude}&amp;z=17&amp;output=embed" width="720" height="480" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe><a href="${e(mapUrl())}" target="_blank" rel="noopener">Open location in Google Maps ↗</a></div>
+  </div></section>`;
+}
+
 function buildHome() {
   const heroItems = ["sony-fx3", "sony-a7-iv", "sigma-70-200mm-f2-8-dg-dn-os-sports", "dji-mic-2", "rodecaster-pro-ii", "godox-v100-sony"].map(slug => ITEM[slug]);
   const slides = heroItems.map((it, n) => `<article class="rental-slide" data-slide ${n ? 'hidden' : ''} role="group" aria-roledescription="slide" aria-label="${n + 1} of ${heroItems.length}: ${e(it.name)}">
@@ -383,6 +395,7 @@ function buildHome() {
     <p style="margin-top:20px"><a class="btn btn-ghost" href="/faq/">All FAQs →</a></p>
   </div>
 </div></section>
+${locationSection()}
 `;
   page("/", "Camera & Lens Rental Colombo | IdeaBay Renting Store, Maharagama", SITE.description, body,
     { schemas: [storeSchema(), websiteSchema(), itemListSchema("IdeaBay equipment rental collection", ITEMS), { "@context": "https://schema.org", "@type": "FAQPage", mainEntity: FAQS.slice(0, 4).map(([q, a]) => ({ "@type": "Question", name: q, acceptedAnswer: { "@type": "Answer", text: a } })) }], priority: "1.0" });
@@ -580,7 +593,6 @@ function buildAbout() {
 
 function buildContact() {
   const trail = [["Home", "/"], ["Contact", "/contact/"]];
-  const mapQ = `${SITE.latitude},${SITE.longitude}`;
   const body = pageHero(trail, "Visit IdeaBay in Maharagama", "Camera and equipment rental pickup at IdeaBay Studio, 21/2 Rajamahavihara Road, Nawinna, Maharagama. Message us before visiting.") + `
 <section class="section"><div class="container two">
   <div class="info">
@@ -592,7 +604,7 @@ function buildContact() {
     <div class="info-row"><span class="ico">${ICONS.fb}</span><div><strong>Social</strong><a href="${SITE.facebook}" target="_blank" rel="noopener">Facebook</a> · <a href="${SITE.instagram}" target="_blank" rel="noopener">Instagram</a></div></div>
   </div>
   <iframe class="map" title="Map to IdeaBay Studio, Maharagama" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-    src="https://www.google.com/maps?q=${mapQ}&amp;z=17&amp;output=embed"></iframe>
+    width="720" height="480" allowfullscreen src="https://www.google.com/maps?q=${SITE.latitude},${SITE.longitude}&amp;z=17&amp;output=embed"></iframe>
 </div></section>`;
   page("/contact/", `Contact IdeaBay Renting Store | Nawinna, Maharagama | ${SITE.phone_display}`,
     `Contact IdeaBay Renting Store on WhatsApp at ${SITE.phone_display} or visit 21/2 Rajamahavihara Road, Nawinna, Maharagama, to rent cameras, lenses and gear.`,
