@@ -40,10 +40,10 @@
       "has": [
         {
           "type": "host",
-          "value": "www.idebay.store"
+          "value": "ideabay.store"
         }
       ],
-      "destination": "https://idebay.store/:path*",
+      "destination": "https://www.ideabay.store/:path*",
       "permanent": true
     }
   ]

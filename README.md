@@ -56,7 +56,7 @@ SEO checks cover internal links, local image/video references, canonical and des
 
 The hero features six equipment slides with autoplay, numbered selectors, arrows, swipe and pause/play. Hover, keyboard focus, reduced motion and background tabs pause rotation. Availability buttons open WhatsApp with the individual gear name, category, details, URL and date prompts. Visitors must tap Send in WhatsApp. All IdeaBay logo references use the supplied root `logo.png`, copied to `/static/logo.png` during the build. `SITE.google_business` is the provided Google profile link.
 
-Production canonical domain: `https://idebay.store`. See `SEO-LAUNCH.md` for domain, Search Console and Google Business Profile launch steps. Local business identity, geo coordinates and Google Place ID are centralized in `data.js`; nearby service areas all refer to the one Maharagama pickup location.
+Production canonical domain: `https://www.ideabay.store`. See `SEO-LAUNCH.md` for domain, Search Console and Google Business Profile launch steps. Local business identity, geo coordinates and Google Place ID are centralized in `data.js`; nearby service areas all refer to the one Maharagama pickup location.
 
 Additional missing equipment photos are stored locally as optimized WebP files. `image-sources.json` records the source page and source image for each downloaded asset. The softbox/stand bundle remains without a product photo until its exact model, size and stand can be confirmed.
 

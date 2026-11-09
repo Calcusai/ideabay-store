@@ -1,6 +1,6 @@
 /** Catalog and daily LKR rates transcribed from the supplied IdeaBay price list. */
 export const SITE = {
-  "url": "https://idebay.store",
+  "url": "https://www.ideabay.store",
   "name": "IdeaBay Renting Store",
   "short": "IdeaBay Rent",
   "tagline": "Camera, Lens & Gear Rental in Maharagama, Colombo",
