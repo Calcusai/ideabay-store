@@ -32,7 +32,7 @@ References:
 - Every product has an individual title and description containing its model, Colombo rental intent and actual daily LKR rate. Category pages target cameras, lenses, wireless microphones, lighting, gimbals, flash and intercom searches.
 - Product JSON-LD identifies each model and its daily rental offer (`LeaseOut`), with links to the local store and the page's main entity. Stock availability is deliberately omitted because bookings must be confirmed.
 - Each product URL has its own Open Graph and Twitter PNG preview in `static/share/`, using that item's photograph. The metadata includes the real image dimensions, MIME type and descriptive alt text. A content hash in the image URL changes when a preview changes.
-- Categories use a representative item photograph; general pages use the original root `logo.png`, served at `/static/logo.png`.
+- Categories use a representative item photograph; general pages use `static/og-cover.png`, a forest-green, cream and amber cover incorporating the supplied original logo.
 - The XML sitemap includes all 19 product images. It does not claim a new modification date on every build.
 - `npm run check` verifies all 19 individual previews, actual PNG dimensions, rental prices and schema, sitemap images and kit references, as well as the existing site checks.
 - Preview PNGs are format conversions of the catalog photos. If a product photo changes, update its matching PNG in `static/share/` as well. For transparent product photos, preserve alpha.
@@ -46,3 +46,5 @@ Further references:
 - https://developers.google.com/search/docs/appearance/snippet
 - https://developers.google.com/search/docs/appearance/google-images
 - https://ogp.me/
+
+Cover image: `static/og-cover.png`, created with built-in imagegen using `logo.png` as the logo reference. Prompt: premium landscape social cover, preserve the original IB/STUDIO IDEABAY mark, forest-green/cream/amber palette, camera and lenses, “Your next shoot. Starts here.”, rental categories, Maharagama/Colombo and www.ideabay.store.
