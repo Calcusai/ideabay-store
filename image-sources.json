@@ -1,0 +1,192 @@
+[
+  {
+    "slug": "sony-a7-iv",
+    "source_file": "items/sony_ilce_7m4_b_alpha_a7_iv_mirrorless_1634812545_1667800.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "sony-fx3",
+    "source_file": "items/fx3.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "sigma-24-70mm-f2-8-dg-dn-ii-art",
+    "source_file": "items/1715845519_1827260.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "sigma-70-200mm-f2-8-dg-dn-os-sports",
+    "source_file": "items/1696477548_1789139.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "sigma-50mm-f1-4-dg-dn-art",
+    "source_file": "items/1675754137_1748158.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "sony-fe-16-35mm-f2-8-gm-ii",
+    "source_file": "items/1693305087_IMG_2071807.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "sony-fe-200-600mm-f5-6-6-3-g-oss",
+    "source_file": "items/1560248447_1485540.jpg",
+    "size": [
+      1000,
+      1000
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "dji-mic-2",
+    "source_file": "items/DJI-Mic-2-\uff08\u4e24\u53d1\u4e00\u6536\uff0c\u542b\u5145\u7535\u76d2\uff09-\u5927\u5361\u56fe-1-1024x990-1.webp",
+    "size": [
+      1275,
+      1233
+    ],
+    "status": "existing-model-photo",
+    "background_edit": {
+      "tool": "built-in imagegen",
+      "prompt": "Remove green background and edge halos; preserve product arrangement, geometry, logos and details; output transparent PNG.",
+      "output_file": "static/images/dji-mic-2.png"
+    }
+  },
+  {
+    "slug": "dji-mic-3",
+    "source_file": "items/1756367200_1900679.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "rodecaster-pro-ii",
+    "source_file": "items/1653335184_1696424.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "godox-v100-sony",
+    "source_file": "items/1734641171_1868006.jpg",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "hollyland-solidcom-se-global-5s",
+    "source_file": "items/1726735599_1850001.png",
+    "size": [
+      500,
+      500
+    ],
+    "status": "existing-model-photo"
+  },
+  {
+    "slug": "rode-podmic-with-arm",
+    "source_files": [
+      "items/1545210908_IMG_1113655.jpg",
+      "items/1633516533_1605031.jpg"
+    ],
+    "status": "existing-model-photos-bundled",
+    "size": [
+      1000,
+      700
+    ]
+  },
+  {
+    "slug": "nanlite-fs-300b",
+    "source_page": "https://nanliteus.com/products/fs-300b-ac-powered-bi-color-led-monolight",
+    "source_image": "https://nanliteus.com/cdn/shop/files/fs-300b-main.jpg?v=1758655659&width=1200",
+    "size": [
+      1200,
+      1200
+    ],
+    "status": "downloaded"
+  },
+  {
+    "slug": "nicefoto-lv6000a",
+    "source_page": "https://www.icamplus.co.th/product/3317/nicefoto-lv-6000a-600w-bi-color-cob-led",
+    "source_image": "https://inwfile.com/s-dz/dnovhb.jpg",
+    "size": [
+      800,
+      800
+    ],
+    "status": "downloaded"
+  },
+  {
+    "slug": "dji-rs-4-pro",
+    "source_page": "https://us.store.dji.com/products/dji-rs-4-pro",
+    "source_image": "https://us.store.dji.com/cdn/shop/files/release-v05-27795505774669-dji-rs-4-pro-v3-001-5924fa618ac9f4e60e2e459f119a0daa.png?v=1785262153&width=1200",
+    "size": [
+      1254,
+      1254
+    ],
+    "status": "downloaded",
+    "background_edit": {
+      "tool": "built-in imagegen",
+      "prompt": "Remove green background and edge halos; preserve product arrangement, geometry, logos and details; output transparent PNG.",
+      "output_file": "static/images/dji-rs-4-pro.png"
+    }
+  },
+  {
+    "slug": "nanlite-fs-200b",
+    "source_page": "https://nanliteus.com/products/fs-200b-bi-color-ac-led-monolight",
+    "source_image": "https://nanliteus.com/cdn/shop/files/FS-200B_5.jpg?v=1758657086&width=1000",
+    "size": [
+      1000,
+      1000
+    ],
+    "status": "downloaded"
+  },
+  {
+    "slug": "nanlite-pavotube-ii-30c-2-light-kit",
+    "source_page": "https://nanliteus.com/products/pavotube-ii-30c-4-foot-rgbww-led-tube-light",
+    "source_image": "https://nanliteus.com/cdn/shop/files/PavoTube_II_30C_2_Light_Kit.jpg?v=1788744400&width=1000",
+    "size": [
+      1000,
+      1000
+    ],
+    "status": "downloaded"
+  },
+  {
+    "slug": "sigma-85mm-f1-4-dg-dn-art",
+    "source_page": "https://www.sigma-global.com/en/lenses/a020_85_14/",
+    "source_image": "https://www.sigma-global.com/lenses/a020_85_14_product_img01.png",
+    "size": [
+      1000,
+      1000
+    ],
+    "status": "downloaded"
+  }
+]

@@ -1,0 +1,15 @@
+{
+  "name": "ideabay-renting-store",
+  "version": "1.0.0",
+  "private": true,
+  "description": "IdeaBay Renting Store: SEO static website (camera & gear rental, Maharagama, Colombo)",
+  "type": "module",
+  "scripts": {
+    "build": "node build.js",
+    "dev": "node scripts/dev.js",
+    "check": "node scripts/check.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

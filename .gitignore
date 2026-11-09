@@ -1,0 +1,35 @@
+# Dependencies and generated site output
+node_modules/
+/site/
+coverage/
+.cache/
+
+# Hosting state and local credentials
+.vercel/
+.env
+.env.*
+!.env.example
+!.env.*.example
+*.pem
+*.key
+
+# Local logs and temporary files
+*.log
+npm-debug.log*
+.tmp/
+tmp/
+*.tmp
+*.swp
+*.swo
+*~
+
+# Operating system, editor and assistant state
+.DS_Store
+._*
+Thumbs.db
+.idea/
+.vscode/
+__pycache__/
+*.py[cod]
+.claude/
+.codex/
